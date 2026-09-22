@@ -1,0 +1,22 @@
+{
+  "name": "mcp-onboarding",
+  "version": "0.22.0",
+  "description": "MCP server for a new-hire onboarding planner: hire records, role templates, task owners and due dates. New-hire onboarding as role-based task templates, with a dated checklist per hire that HR and the manager both read.",
+  "settings": [
+    {
+      "name": "mcp.zovo.one token",
+      "description": "A free anonymous token from https://mcp.zovo.one/mcp/token, or your Pro key. One token is one data space, and it is refreshed for another 30 days on every write.",
+      "envVar": "ZOVO_MCP_TOKEN",
+      "sensitive": true
+    }
+  ],
+  "mcpServers": {
+    "onboarding": {
+      "httpUrl": "https://mcp.zovo.one/mcp/onboarding",
+      "headers": {
+        "Authorization": "Bearer ${ZOVO_MCP_TOKEN}"
+      },
+      "description": "New-hire onboarding as role-based task templates, with a dated checklist per hire that HR and the manager both read."
+    }
+  }
+}
